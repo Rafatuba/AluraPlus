@@ -2,7 +2,7 @@ const target = document.querySelectorAll('[data-anime]');
 const animationClass = 'animate';
 
 function animeScroll() {
-  const windowTop = window.scrollY + ((window.innerHeight * 3 ) / 4);
+  const windowTop = window.scrollY + ((window.innerHeight * 3 ) / 6);
   target.forEach(function (e) {
     if ((windowTop) > e.offsetTop) {
       e.classList.add(animationClass)
@@ -32,6 +32,5 @@ const debounce = function (func, wait, immediate) {
 if (target.length) {
   window.addEventListener('scroll', debounce (function() {
     animeScroll();
-    console.log('rafa')
   }, 200));
 }
